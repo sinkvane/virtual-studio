@@ -1,0 +1,194 @@
+<main class="main">
+  <h1 class="main__title">Статистика и выплаты</h1>
+
+  <div class="main__inner">
+
+    <div class="info__block">
+      <a href="#">
+        <div class="block__img">
+          <img src="img/video-1.png" alt="video-preview">
+          <span>1:51</span>
+        </div>
+      </a>
+      <div class="block__info">
+        <h5 class="block__title">В данном разделе Вам необходимо заполнить реквизиты для выплат</h5>
+
+        <p class="block__text">После окончания периода Вы всегда сможете посмотреть Ваш заработок по каждой площадке
+        </p>
+
+        <p class="block__text">Более подробно рассказано в нашем видео</p>
+
+      </div>
+    </div>
+
+    <div class="consult__block">
+      <div class="consult__info">
+        <h5>Нужна консультация по выплатам</h5>
+        <h6>Обратитесь к специалистам CASHROOM</h6>
+      </div>
+      @include('../../components/button.html', {
+      "text": "Нужна помощь",
+      "backgroundColor": "#f1f3fa",
+      "color": "#aa84ca",
+      "icon": "help",
+      "fill": "#aa84ca",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "hover": "blue__hover"
+      })
+      <img src="../../../img/background.png" alt="background">
+    </div>
+
+    <div class="period__block">
+      <h2>Выбрать период</h2>
+
+      <div class="period__inner">
+        <span>Период</span>
+        <div class="period__top">
+          <div class="period__picker">
+            <form>
+              <div class="__select" data-state="">
+                <div class="__select__title" data-default="Option 0"><span>2023</span>
+                  <span>1 -15 мая</span>
+                </div>
+                <div class="__select__content">
+                  <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" checked />
+                  <label for="singleSelect0" class="__select__label">2023
+                    1 -15 мая</label>
+                  <input id="singleSelect1" class="__select__input" type="radio" name="singleSelect" />
+                  <label for="singleSelect1" class="__select__label">2023
+                    1 -15 мая</label>
+                  <input id="singleSelect2" class="__select__input" type="radio" name="singleSelect" />
+                  <label for="singleSelect2" class="__select__label">2024
+                    1 -15 мая</label>
+                  <input id="singleSelect3" class="__select__input" type="radio" name="singleSelect" />
+                  <label for="singleSelect3" class="__select__label">2025
+                    1 -15 мая</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div></div>
+        </div>
+        <div class="period__middle">
+          <div>
+            <span>Chaturbate</span>
+            <span>1500$</span>
+          </div>
+          <div>
+            <span>Stripchat</span>
+            <span>200$</span>
+          </div>
+        </div>
+        <div class="period__bottom">
+          <div>
+            <span>Skyprivat</span>
+            <span>30$</span>
+          </div>
+          <div>
+            <span>Общий заработок</span>
+            <span>1730$</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reminder__block">
+      <h5>Обязательно укажите способ выплаты!</h5>
+      <p>Мы совершаем платежи на карты Российских банков, чтоб Вам было максимально легко и просто получить свои
+        деньги
+      </p>
+      <p>Не правильно указанные реквизиты приведут к потере денег!
+        Будьте придельное внимательны при вводе номера карты.</p>
+      <img src="../../../img/reminder-image.png" alt="reminder-withdraw-image">
+    </div>
+
+    <form class="data__block">
+      <h2>Данные для выплат</h2>
+      <div class="data__inner">
+        <div class="data__select">
+          <form>
+            <div class="__select" data-state="">
+              <div class="__select__title" data-default="Option 0"><span>2023</span>
+                <span>1 -15 мая</span>
+              </div>
+              <div class="__select__content">
+                <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" checked />
+                <label for="singleSelect0" class="__select__label">2023
+                  1 -15 мая</label>
+                <input id="singleSelect1" class="__select__input" type="radio" name="singleSelect" />
+                <label for="singleSelect1" class="__select__label">2023
+                  1 -15 мая</label>
+                <input id="singleSelect2" class="__select__input" type="radio" name="singleSelect" />
+                <label for="singleSelect2" class="__select__label">2024
+                  1 -15 мая</label>
+                <input id="singleSelect3" class="__select__input" type="radio" name="singleSelect" />
+                <label for="singleSelect3" class="__select__label">2025
+                  1 -15 мая</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="data__card">
+          <input type="number" placeholder="Номер карты">
+        </div>
+        @include('../../components/button.html', {
+        "text": "Сохранить",
+        "backgroundColor": "#aa84ca",
+        "color": "#fff",
+        "fontSize": "18px",
+        "fontWeight": "500",
+        })
+      </div>
+    </form>
+
+    <div class="dateWithdraw__block">
+      <h2>Когда происходят выплаты?</h2>
+
+      <div class="dateWithdraw__inner">
+        <a href="#">
+          <img src="../../../img/video-1-big.png" alt="video-preview">
+          <span>1:51</span>
+        </a>
+        <div>
+          <h4>Все выплаты производятся в соответствии с датами когда площадки отправляют Ваши выплаты</h4>
+          <h5>Просим ознакомиться с видео и подробными датами выплат</h5>
+        </div>
+        <div class="dateWithdraw__bottom">
+
+          <div>
+            <span>За 1-15 мая</span>
+            <span>мы выплатим</span>
+            <span>23 мая</span>
+          </div>
+
+          <div>
+            <span>За 15-31 мая</span>
+            <span>мы выплатим</span>
+            <span>7 июня</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="withdraw__block">
+      <div class="withdraw__info">
+        <h5>Если Вам нужны срочно деньги</h5>
+        <h6>Вы не готовы ждать дату выплат, то Вы всегда можете подать заявку на срочную выплату за дополнительный
+          процент
+        </h6>
+      </div>
+      @include('../../components/button.html', {
+      "text": "Запросить выплату",
+      "backgroundColor": "#fff",
+      "color": "#aa84ca",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      });
+      <img src="../../../img/withdraw-image.png" alt="background">
+    </div>
+
+  </div>
+
+</main>

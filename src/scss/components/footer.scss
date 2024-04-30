@@ -1,0 +1,166 @@
+@import "../vars";
+@import "../mixins";
+
+.footer {
+  grid-area: 2 / 2 / 3 / 3;
+  width: 100%;
+  background-color: $white;
+  padding: 30px 45px 45px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 10px;
+
+  & > li {
+    list-style: none;
+  }
+}
+
+.footer__nav--link {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  color: $blue;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: background-color 0.3s linear, color 0.3s linear;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $light;
+    color: $purple;
+  }
+}
+
+.footer__socials {
+  display: flex;
+  gap: 15px;
+}
+
+.footer__socials--card {
+  position: relative;
+  padding: 13px 19px;
+  background-color: $light;
+  border-radius: 15px;
+  text-decoration: none;
+  overflow: hidden;
+
+  &:last-child {
+    &::before {
+      background-image: url("../../img/footer-email-card.png");
+    }
+
+    & > .blur::after {
+      height: 100%;
+      filter: blur(20px);
+    }
+  }
+
+  & > .blur {
+    @include blur;
+  }
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100px;
+    height: 100%;
+    background-image: url("../../img/footer-tg-card.png");
+    background-repeat: no-repeat;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    top: 4px;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #d775c7 0%, #aa84ca 100%);
+    border-radius: 15px;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+  }
+
+  &:hover {
+    & > .blur::after {
+      opacity: 1;
+    }
+
+    &::after,
+    &::before {
+      opacity: 1;
+    }
+
+    & > .social__card--inner {
+      & > span {
+        color: $white;
+      }
+
+      & > div > span {
+        color: $white;
+      }
+
+      & > div > svg {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.social__card--inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  & > span {
+    position: relative;
+    z-index: 5;
+    color: $blue-light;
+    font-size: 18px;
+    font-weight: 400;
+    transition: color 0.3s linear;
+  }
+
+  & > div {
+    position: relative;
+    z-index: 5;
+    display: flex;
+
+    & > svg {
+      width: 18px;
+      height: 18px;
+      fill: $purple;
+      margin-right: 15px;
+      transition: fill 0.3s linear;
+    }
+
+    & > span {
+      color: $blue;
+      font-size: 18px;
+      font-weight: 500;
+      transition: color 0.3s linear;
+    }
+  }
+}

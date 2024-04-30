@@ -1,0 +1,124 @@
+@import "../vars";
+@import "../mixins";
+
+.socials {
+  position: relative;
+  top: 105px;
+  grid-area: 2 / 2 / 4 / 3;
+}
+
+.socials__inner {
+  position: sticky;
+  top: 30px;
+
+  & > .social__card {
+    margin-top: 30px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.social__card {
+  position: relative;
+  padding: 36px 30px 45px;
+  background: $white;
+  transition: background 0.3s linear;
+  border-radius: 15px;
+  z-index: 4;
+  overflow: hidden;
+
+  &:hover {
+    background: linear-gradient(90deg, #d775c7 0%, #aa84ca 100%);
+    transition: background 0.3s linear;
+
+    & > .social__card--inner > .button {
+      background-color: $white;
+      color: #aa84ca;
+
+      & > svg {
+        fill: #aa84ca;
+      }
+    }
+
+    & > .blur::after {
+      opacity: 1;
+      filter: blur(40px);
+      bottom: -30px;
+      height: 55%;
+    }
+
+    & > .social__card--inner > .social__card--info {
+      & > h4,
+      p {
+        color: $white;
+      }
+    }
+
+    &::after {
+      opacity: 1;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 170px;
+    height: 100%;
+    background-image: url("../../img/mobile-frame-light.png");
+    background-repeat: no-repeat;
+    right: 10px;
+    bottom: 0;
+    top: 20px;
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 0.1s linear;
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 200px;
+    height: 100%;
+    background-image: url("../../img/mobile-frame-dark.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+  }
+
+  & > .blur {
+    @include blur;
+  }
+}
+
+.social__card--info {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 50%;
+
+  & > h4 {
+    color: #263959;
+    font-size: 22px;
+    font-weight: 700;
+    transition: color 0.3s linear;
+  }
+
+  & > p {
+    color: #263959;
+    font-size: 18px;
+    font-weight: 400;
+    transition: color 0.3s linear;
+  }
+}

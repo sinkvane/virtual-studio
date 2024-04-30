@@ -1,0 +1,16 @@
+@import "../vars";
+
+.content {
+  grid-area: 1 / 2 / 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  padding: 30px 30px 30px 0;
+}
+
+.content__inner {
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  grid-template-rows: auto auto;
+  grid-column-gap: 30px;
+}
